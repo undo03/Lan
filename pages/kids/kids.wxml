@@ -1,0 +1,19 @@
+<!--pages/kids/kids.wxml-->
+<view class="container page-kids">
+  <image class="main-logo" src="../../images/main_logo.png" mode="cover"></image>
+  <view class="kid-item" wx:for="{{kids}}" wx:key="{{item}}" bindtap="toKidInfo">
+    <image class="avatar" src="../../images/avatar.png"  />
+    <view class="class-info">
+      <text class="kid-info">小孩一</text>
+      <text class="kindergarten">天才幼儿园大（1）班</text>
+    </view>
+  </view>
+
+  <view class="kid-item" wx:for="{{kids}}" wx:key="{{item}}" bindtap="toParentInfo">
+    <image class="avatar" src="../../images/avatar.png"  />
+    <view class="class-info">
+      <text class="kid-info">家长</text>
+      <text class="kindergarten">家长们</text>
+    </view>
+  </view>
+</view>

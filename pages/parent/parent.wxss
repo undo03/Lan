@@ -1,0 +1,59 @@
+/* pages/parent/parent.wxss */
+.page-parent {
+  padding: 0 30px;
+  background: #fff;
+}
+.logo {
+  width: 140px;
+  height: 60px;
+  margin: 0 auto;
+}
+.avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.avatar .avatar-img {
+  width: 113px;
+  height: 113px;
+}
+.avatar .name {
+  line-height: 30px;
+  font-size: 13px;
+  color: #333333;
+  letter-spacing: 2px;
+}
+
+.form-item {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  line-height: 32px;
+  margin-bottom: 12px;
+  font-size: 13px;
+  color: #333333;
+}
+
+.form-item .item-key {
+  width: 70px;
+}
+.form-item .item-value {
+  width: 200px;
+  border-bottom: 2px solid #999999;
+  text-align: center;
+}
+
+.confirm-submit {
+  width: 127px;
+	height: 35px;
+  margin: 15px auto;
+  line-height: 35px;
+	letter-spacing: 2px;
+	color: #fff;
+	background-color: #00baad;
+	box-shadow: #00baad solid 1px;
+	border-radius: 5px;
+	font-size: 14px;
+	text-align: center;
+}
+

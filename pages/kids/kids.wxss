@@ -1,0 +1,40 @@
+/* pages/kids/kids.wxss */
+.page-kids {
+  width: 100%;
+  padding: 0 30px;
+}
+.main-logo {
+  margin: 10px auto;
+  border-radius: 10px;
+  width: 100%;
+  height: 180px;
+}
+.kid-item {
+  background: #fff;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  
+}
+.avatar {
+  width: 103px;
+  height: 103px;
+  background: #eee;
+  margin-right: 10px;
+}
+.class-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.kid-info {
+  color: #00baad;
+	font-size: 21px;
+	font-weight: bold;
+}
+.kindergarten {
+  color: #a6a6a6;
+  font-size: 18px;
+}

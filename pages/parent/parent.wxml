@@ -1,0 +1,47 @@
+<!--pages/parent/parent.wxml-->
+<view class="container page-parent">
+  <image class="logo" src="../../images/logo.png" mode="cover"></image>
+  <view class="avatar">
+    <image class="avatar-img" src="../../images/avatar.png"></image>
+    <text class="name">姓名：王力宏</text>
+  </view>
+  <form>
+    <view class="form-item">
+      <label class="item-key">性别</label> 
+      <text class="item-value" bindtap="chooseSex">{{sex}}</text>
+    </view>
+    <view class="form-item">
+      <label class="item-key">关系</label> 
+      <input class="item-value" bindinput="inputRelationship"></input>
+    </view>
+    <view class="form-item">
+      <label class="item-key">出生年月</label> 
+      <text class="item-value" bindtap="chooseSex">{{sex}}</text>
+    </view>
+    <view class="form-item">
+      <label class="item-key">证件类型</label> 
+      <text class="item-value" bindtap="chooseCredentialType">{{credentialType}}</text>
+    </view>
+    <view class="form-item">
+      <label class="item-key">证件号码</label> 
+      <input class="item-value" type="number" bindinput="inputIDNumber"></input>
+    </view>
+    <view class="form-item">
+      <label class="item-key">名族</label> 
+      <input class="item-value" bindinput="inputFamily"></input>
+    </view>
+    <view class="form-item">
+      <label class="item-key">电话号码</label> 
+      <input class="item-value" type="number" bindinput="inputPhoneNumber"></input>
+    </view>
+    <view class="form-item">
+      <label class="item-key">职业</label> 
+      <input class="item-value" bindinput="inputOccupation"></input>
+    </view>
+  </form>
+
+  <view class="confirm-submit">确认提交</view>
+
+
+
+</view>

@@ -1,0 +1,100 @@
+/* pages/login/login.wxss */
+.page-login {
+  padding: 0 30px;
+}
+.main-logo {
+  margin: 10px auto;
+  border-radius: 10px;
+  width: 309px;
+  height: 180px;
+}
+.main-slogan {
+  line-height: 31px;
+  letter-spacing: 5px;
+	color: rgba(166, 166, 166, 1);
+	font-size: 15px;
+	text-align: left;
+	font-weight: bold;
+}
+.input-phone, .input-code {
+  display: flex;
+  flex-direction: column;
+
+}
+.input-phone .text, .input-code .text {
+  color: rgba(91, 196, 190, 1);
+	font-size: 16px;
+	line-height: 47px;
+} 
+.input-phone .input-area {
+  display: flex;
+  align-items: center;
+}
+.input-area .phone-number {
+  width: 70px;
+  color: rgba(91, 196, 190, 1);
+	font-size: 16px;
+	line-height: 30px;
+}
+
+.input-area .input {
+  flex: 1;
+  height: 35px;
+  font-size: 14px;
+}
+.input-area .input::placeholder {
+  color: rgba(166, 166, 166, 1); 
+}
+
+.input-code .code-area {
+  display: flex;
+  align-items: center;
+}
+.input-code .code-area .input {
+  width: 140px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+}
+.input-code .code-area .get-code {
+  margin-left: 45px;
+  /* padding: 0 10px; */
+  width: 100px;
+	height: 24px;
+  line-height: 24px;
+	color: rgba(255, 255, 255, 1);
+	background-color: rgba(91, 196, 190, 1);
+	border-radius: 13px;
+	font-size: 13px;
+	border: rgba(0, 186, 173, 1) solid 1px;
+	text-align: center;
+}
+.input-code .code-area .disabled {
+  background: #999;
+  border-color: #999;
+}
+.confirm-btn {
+  width: 110px;
+	height: 30px;
+  margin: 50px auto 20px;
+	letter-spacing: 4px;
+	color: rgba(255, 255, 255, 1);
+	background-color: rgba(91, 196, 190, 1);
+	box-shadow: rgba(91, 196, 190, 1) solid 1px;
+	border-radius: 5px;
+	font-size: 14px;
+	line-height: 30px;
+	text-align: center;
+}
+
+.agreement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.agreement .text {
+  text-indent: 5px;
+	color: rgba(51, 51, 51, 1);
+	font-size: 13px;
+}

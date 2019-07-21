@@ -1,0 +1,16 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/parent/parent",
+    "pages/kidInfo/kidInfo",
+    "pages/kids/kids",
+    "pages/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}
