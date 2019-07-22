@@ -7,12 +7,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-    agree: false,
     phoneNumber: '',
     code: '',
     codeNumber: '',
     countDown: false,
-    time: 60
+    time: 60,
+
+    countryCodes: ["+86", "+80", "+84", "+87"],
+    countryCodeIndex: 0,
+
+    isAgree: false
   },
   /**
    * 保存输入的手机号码
@@ -20,6 +24,13 @@ Page({
   bindPhoneInput: function (event) {
     this.setData({
       phoneNumber: event.detail.value
+    })
+  },
+  bindCountryCodeChange: function (e) {
+    console.log('picker country code 发生选择改变，携带值为', e.detail.value);
+
+    this.setData({
+      countryCodeIndex: e.detail.value
     })
   },
   /**
@@ -34,8 +45,8 @@ Page({
    * 根据手机号码获取验证码
    */
   getVerificationCode: function () {
-    const { phoneNumber, agree } = this.data;
-    console.log(phoneNumber, agree);
+    const { phoneNumber, isAgree } = this.data;
+    console.log(phoneNumber, isAgree);
     // 根据手机号码请求接口，校验手机号是否在系统中，校验成功发送验证码，否则无权继续访问
     this.setData({
       codeNumber: '1234',
@@ -58,6 +69,12 @@ Page({
   /**
    * 勾选同意协议按钮
    */
+
+  bindAgreeChange: function (e) {
+    this.setData({
+      isAgree: !!e.detail.value.length
+    });
+  },
   checkboxChange: function (event) {
     const value = event.detail.value[0];
     this.setData({
@@ -69,12 +86,8 @@ Page({
    * 确认授权
    */
   confirmAuthorization: function () {
-    const { phoneNumber, codeNumber, code, agree } = this.data;
-
-    wx.navigateTo({
-      url: '../kids/kids?id=1'
-    })
-    return;
+    const { phoneNumber, codeNumber, code, isAgree } = this.data;
+    console.log(phoneNumber, codeNumber, code, isAgree)
     // 校验是否输入了验证码
     if (!code) {
       wx.showToast({
@@ -95,7 +108,7 @@ Page({
       return;
     }
     // 检查是否同意协议
-    if (!agree) {
+    if (!isAgree) {
       wx.showToast({
         title: '请阅读协议并同意授权',
         icon: 'none',
@@ -103,6 +116,11 @@ Page({
       })
       return;
     }
+
+    wx.navigateTo({
+      url: '../kids/kids?id=1'
+    })
+    return;
     // TODO 授权操作
     // 确认授权，想后台发送授权请求
   },

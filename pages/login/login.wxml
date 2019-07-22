@@ -1,16 +1,21 @@
 <!--pages/login/login.wxml-->
 <view class="container page-login">
-  <image class="main-logo" src="../../images/main_logo.png" mode="cover"></image>
+  <image class="main-logo" src="" mode="cover"></image>
   <text class="main-slogan">岚之灵伴你快乐成长</text>
   <view class="input-phone">
     <label class="text">注册手机</label>
-    <view class="input-area">
-      <text class="phone-number">+86</text> 
-      <input class="input"  
-             bindinput="bindPhoneInput"
-             type="number" 
-             confirm-type="send" 
-             placeholder="在这里输入手机号" />
+    <view class="weui-cell weui-cell_select">
+      <view class="weui-cell__hd" style="width: 105px">
+        <picker bindchange="bindCountryCodeChange" value="{{countryCodeIndex}}" range="{{countryCodes}}">
+          <view class="weui-select">{{countryCodes[countryCodeIndex]}}</view>
+        </picker>
+      </view>
+      <view class="weui-cell__bd weui-cell__bd_in-select-before">
+        <input class="weui-input" 
+                bindinput="bindPhoneInput" 
+                type="number"  
+                placeholder="请输入手机号码" />
+      </view>
     </view>
   </view>
   <view class="input-code">
@@ -24,11 +29,21 @@
       <text wx:else="{{countDown}}" bindtap="getVerificationCode" class="get-code">获取验证码</text>
     </view>
   </view>
-  <view class="confirm-btn" bindtap="confirmAuthorization">确认授权</view>
-  <view class="agreement">
-    <checkbox-group bindchange="checkboxChange">
-      <checkbox value="{{!agree}}" checked="{{agree}}"/>
-    </checkbox-group>
-    <text class="text">请阅读并同意授权</text>
+  <!-- <view class="confirm-btn" bindtap="confirmAuthorization">确认授权</view> -->
+
+  <checkbox-group bindchange="bindAgreeChange">
+    <label class="weui-agree" for="weuiAgree">
+      <view class="weui-agree__text">
+        <checkbox class="weui-agree__checkbox" id="weuiAgree" value="agree" checked="{{isAgree}}" />
+        <view class="weui-agree__checkbox-icon">
+          <icon class="weui-agree__checkbox-icon-check" type="success_no_circle" size="9" wx:if="{{isAgree}}"></icon>
+        </view>
+        阅读并同意<navigator url="" class="weui-agree__link">《相关条款》</navigator>
+      </view>
+    </label>
+  </checkbox-group>
+
+  <view class="weui-btn-area">
+    <button class="weui-btn" type="primary" bindtap="confirmAuthorization">确认授权</button>
   </view>
 </view>
